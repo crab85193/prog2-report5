@@ -11,10 +11,12 @@ public class Code17 {
         }catch(Exception e){
             System.out.println("何らかの例外が発生しました。");
         }finally{
-            try {
-                fw.close();
-            }catch(IOException e){
-                ;
+            if(fw != null){
+                try {
+                    fw.close();
+                }catch(IOException e){
+                    ;
+                }
             }
         }
     }

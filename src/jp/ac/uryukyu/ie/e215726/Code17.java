@@ -4,13 +4,13 @@ import java.io.*;
 
 public class Code17 {
     public static void main(String[] args){
-        FileWriter fw = null;
         try{
-            fw = new FileWriter("data.txt");
+            FileWriter fw = new FileWriter("data.txt");
             fw.write("hello!");
         }catch(Exception e){
             System.out.println("エラーです。");
+        }finally{
+            fw.close();
         }
-        fw.close();
     }
 }

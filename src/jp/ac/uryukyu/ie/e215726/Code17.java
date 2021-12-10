@@ -4,14 +4,18 @@ import java.io.*;
 
 public class Code17 {
     public static void main(String[] args){
-        FileWriter fw;
+        FileWriter fw = null;
         try{
             fw = new FileWriter("data.txt");
             fw.write("hello!");
         }catch(Exception e){
-            System.out.println("エラーです。");
+            System.out.println("何らかの例外が発生しました。");
         }finally{
-            fw.close();
+            try {
+                fw.close();
+            }catch(IOException e){
+                ;
+            }
         }
     }
 }

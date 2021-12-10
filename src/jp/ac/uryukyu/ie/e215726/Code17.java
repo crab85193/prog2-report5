@@ -6,10 +6,10 @@ public class Code17 {
     public static void main(String[] args){
         try{
             FileWriter fw = new FileWriter("data.txt");
-
-        }catch(IOException e){
-            System.out.println("エラーが発生しました。");
-
+            fw.write("hello!");
+            fw.close();
+        }catch(Exception e){
+            System.out.println("何らかの例外が発生しました。");
         }
     }
 }
